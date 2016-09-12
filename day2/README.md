@@ -16,15 +16,15 @@ It contains these files:
 
 * `calc_schemey.py` – additional, bizarre Python implementations of the calculator assignment. These are not written the way a sane Python programmer would typically code them, but:
 
-* `calc_schemey.rkt` – Racket (Scheme) implementations of the “schemey” Python implementations.
+* `calc_scheme.rkt` – Racket (Scheme) implementations of the “schemey” Python implementations.
 
 Review these files. Try to understand how the Python and Scheme implementations relate.
 
 ### Writing
 
-Complete the definitions in [focs-assignments/day2/hw1.rkt](https://github.com/focs16fall/focs-assignments/day2/hw1.rkt).
+Complete the definitions in [focs-assignments/day2/hw1.rkt](./hw1.rkt).
 
-When you are done, follow the instructions in the [focs-assignments README](https://github.com/focs16fall/focs-assignments/README.md) to submit the assignment.
+When you are done, follow the instructions in the [focs-assignments README](/README.md) to submit the assignment.
 
 This assignment is due at noon on the day of class (September 8).
 
