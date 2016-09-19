@@ -87,3 +87,7 @@
 
 (display (filter-gt 3 '(1 2 -3 -4 5 -6 7)))(newline)
 (newline)
+
+;; Retrospective: anything that I didn't end up using map for needed to return a different size of list from what was input
+;; I didn't use filter much because half of these could have just been the filter function with a different parameter, and there didn't
+;; seem to be much of a point in doing that.

@@ -76,9 +76,9 @@
   	[(eq? (first x) 'NEQ) (not (= (calculate (cadr x) lookup-list) (calculate (caddr x) lookup-list)))]
 
   	;created part 4 - adds 3 new boolean operations
-  	[(eq? (first x) 'ANND) (and (calculate (cadr x)) (calculate (caddr x)))]
-  	[(eq? (first x) 'ORR) (or (calculate (cadr x)) (calculate (caddr x)))]
-  	[(eq? (first x) 'NOTT) (not (calculate (cadr x)))]
+  	[(eq? (first x) 'ANND) (and (calculate (cadr x) lookup-list) (calculate (caddr x) lookup-list))]
+  	[(eq? (first x) 'ORR) (or (calculate (cadr x) lookup-list) (calculate (caddr x) lookup-list))]
+  	[(eq? (first x) 'NOTT) (not (calculate (cadr x) lookup-list))]
 
   	;created part 5 - add if clause
   	[(eq? (first x) 'IPH) 
@@ -97,3 +97,4 @@
 )
 
 (calculate '(ADD x y) thingie)
+
