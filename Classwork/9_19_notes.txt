@@ -1,0 +1,10 @@
+Simplifying computation to recognizing strings in a language:
+
+Alphabet: Sigma = {0,1}
+string = 010, 0000, etc. "" = epsilon
+
+language = defined set of strings
+states: Q = {q0, q1, ... qn}
+	- state q0 is almost always the starting state
+	- accepting states {q1, ...1n}
+	- transition table : {qk, x-> qm}
