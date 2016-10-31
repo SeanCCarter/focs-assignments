@@ -8,7 +8,7 @@ Date   : 2016-10-27
 License: MIT License
 """
 
-from queue import Queue
+from Queue import Queue
 
 
 class Graph(object):
@@ -42,6 +42,7 @@ class Node(object):
 
     def __init__(self, label):
         self.label = label
+        self.distance = 0
 
     def __repr__(self):
         return self.label
@@ -63,6 +64,58 @@ def bfs(graph, start):
         n = remaining_nodes.get()
         visit(n)
 
+#Question 1
+def spanning_tree(graph, start):
+    remaining_nodes = Queue()
+    visited = set()
+    nodes = []
+    edges = []
+    seen = set()
+
+    def visit(node):
+        visited.add(node)
+        nodes.append(node)
+        for tail in graph.successors(node):
+            if tail not in visited:
+                remaining_nodes.put(tail)
+            if tail not in seen:
+                edges.append((node, tail))
+                edges.append((tail, node))
+                seen.add(tail)
+
+    remaining_nodes.put(start)
+    while not remaining_nodes.empty():
+        n = remaining_nodes.get()
+        visit(n)
+    return(Graph(nodes, edges))
+
+#Question 2
+def spanning_tree_distance(graph, start):
+    remaining_nodes = Queue()
+    visited = set()
+    nodes = []
+    edges = []
+    seen = set()
+
+    def visit(node):
+        visited.add(node)
+        nodes.append(node)
+        for tail in graph.successors(node):
+            if tail not in visited:
+                remaining_nodes.put(tail)
+            if tail not in seen:
+                tail.distance = node.distance + 1
+                edges.append((node, tail))
+                edges.append((tail, node))
+                seen.add(tail)
+
+    remaining_nodes.put(start)
+    while not remaining_nodes.empty():
+        n = remaining_nodes.get()
+        visit(n)
+    return(Graph(nodes, edges))
+
+
 
 def node_and_edge_labels_to_objects(node_labels, edge_labels):
     """Given a list of node labels, and a list of edges of the form (head_label, tail_label),
@@ -79,3 +132,10 @@ edge_labels = [('a', 'b'), ('a', 'c'), ('b', 'd'), ('b', 'e'), ('e', 'a')]
 
 g = Graph(*node_and_edge_labels_to_objects(node_labels, edge_labels))
 bfs(g, g.find_node('a'))
+h = spanning_tree(g, g.find_node('a'))
+for node in h.nodes:
+    print node
+k = spanning_tree_distance(g, g.find_node('a'))
+for node in k.nodes:
+    print node
+    print node.distance
