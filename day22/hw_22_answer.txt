@@ -1,0 +1,13 @@
+Student Name: Sean Carter
+[ ] I completed this assignment without assistance or external resources.
+[x] I completed this assignment with assistance from wikipedia.org
+   and/or using these external resources: ___
+
+1. a) It is not greedy, recursive, or dynamic.
+   b) I will still try to print the word on a new line, since there is no check for words that are longer than that.
+   c) Assuming that an "optimal" solution is one that uses the minimum number of lines, the algorithm should producte the fewest number number of lines, since they do all have to be in order. However, there is no given definition of optimal - for example, the next algorithm tries to reduce raggedness caused by wated space, which this algorithm is horrible at. So there really isn't enough information.
+
+2. It is a greedy algorithm, and not recursive or dynamic. It finds the least costly line break it can at each step, working its way up slowly.
+
+3. I have now admired Donald Knuth. He is indeed quite impressive.
+
